@@ -1,16 +1,16 @@
-using FluentValidator.Validation;
-using FluentValidator.Br.Validation;
+using Flunt.Br.Validation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Flunt.Validations;
 
-namespace FluentValidator.Br.Tests
+namespace Flunt.Br.Tests
 {
     [TestClass]
-    public class FluentValidatorBrTest
+    public class FluntBrTest
     {
         [TestMethod]
         public void IsCpf_Invalid()
         {
-            var wrong = new ValidationContract()
+            var wrong = new Contract()
                 .IsCpf("12345678910", "document", "Invalid document");
             Assert.AreEqual(false, wrong.Valid);
         }
@@ -18,7 +18,7 @@ namespace FluentValidator.Br.Tests
         [TestMethod]
         public void IsCpf_Valid()
         {
-            var right = new ValidationContract()
+            var right = new Contract()
                 .IsCpf("08381614996", "document", "Invalid document");
             Assert.AreEqual(true, right.Valid);
         }
@@ -26,7 +26,7 @@ namespace FluentValidator.Br.Tests
         [TestMethod]
         public void IsCnpj_InValid()
         {
-            var wrong = new ValidationContract()
+            var wrong = new Contract()
                 .IsCnpj("123456789101112", "document", "Invalid document");
             Assert.AreEqual(false, wrong.Valid);
         }
@@ -34,7 +34,7 @@ namespace FluentValidator.Br.Tests
         [TestMethod]
         public void IsCnpj_Valid()
         {
-            var right = new ValidationContract()
+            var right = new Contract()
                 .IsCnpj("58558674000196", "document", "Invalid document");
             Assert.AreEqual(true, right.Valid);
         }
@@ -42,7 +42,7 @@ namespace FluentValidator.Br.Tests
         [TestMethod]
         public void IsPhone_InValid()
         {
-            var wrong = new ValidationContract()
+            var wrong = new Contract()
                 .IsPhone("123456789", "phone", "Invalid phone");
             Assert.AreEqual(false, wrong.Valid);
         }
@@ -50,7 +50,7 @@ namespace FluentValidator.Br.Tests
         [TestMethod]
         public void IsPhone_Valid()
         {
-            var right = new ValidationContract()
+            var right = new Contract()
                 .IsPhone("(45)3222-4520", "phone", "Invalid phone");
             Assert.AreEqual(true, right.Valid);
         }
@@ -58,7 +58,7 @@ namespace FluentValidator.Br.Tests
         [TestMethod]
         public void IsCellPhone_InValid()
         {
-            var wrong = new ValidationContract()
+            var wrong = new Contract()
                 .IsCellPhone("456456444456", "cellphone", "Invalid cellphone");
             Assert.AreEqual(false, wrong.Valid);
         }
@@ -66,7 +66,7 @@ namespace FluentValidator.Br.Tests
         [TestMethod]
         public void IsCellPhone_Valid()
         {
-            var right = new ValidationContract()
+            var right = new Contract()
                 .IsCellPhone("(45)99999-9999", "cellphone", "Invalid cellphone");
             Assert.AreEqual(true, right.Valid);
         }

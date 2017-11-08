@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <Version>1.0.0</Version>
+    <Authors>Alan Lira</Authors>
+    <Description>Extensions of Flunt for Brazilian projects</Description>
+    <PackageLicenseUrl>https://github.com/lira92/flunt.br</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/lira92/flunt.br</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/lira92/flunt.br</RepositoryUrl>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Flunt" Version="1.0.2"/>
+  </ItemGroup>
+</Project>

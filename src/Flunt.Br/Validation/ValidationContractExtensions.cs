@@ -1,10 +1,10 @@
 using System;
 using System.Text.RegularExpressions;
-using FluentValidator.Validation;
+using Flunt.Validations;
 
-namespace FluentValidator.Br.Validation
+namespace Flunt.Br.Validation
 {
-    public static class ValidationContractExtensions
+    public static class ContractExtensions
     {
         private static bool ValidateCpf(string cpf)
         {
@@ -42,7 +42,7 @@ namespace FluentValidator.Br.Validation
             return cpf.EndsWith(digito);
         }
 
-        public static ValidationContract IsCpf(this ValidationContract contract, string value, string property, string message)
+        public static Contract IsCpf(this Contract contract, string value, string property, string message)
         {
             if(!ValidateCpf(value))
                 contract.AddNotification(property, message);
@@ -84,21 +84,21 @@ namespace FluentValidator.Br.Validation
             return cnpj.EndsWith(digito);
         }
 
-        public static ValidationContract IsCnpj(this ValidationContract contract, string value, string property, string message)
+        public static Contract IsCnpj(this Contract contract, string value, string property, string message)
         {
             if(!ValidateCnpj(value))
                 contract.AddNotification(property, message);
             return contract;
         }
 
-        public static ValidationContract IsPhone(this ValidationContract contract, string value, string property, string message)
+        public static Contract IsPhone(this Contract contract, string value, string property, string message)
         {
             if(!new Regex(@"^\(\d{2}\)\d{4}-\d{4}$").Match(value).Success)
                 contract.AddNotification(property, message);
             return contract;
         }
 
-        public static ValidationContract IsCellPhone(this ValidationContract contract, string value, string property, string message)
+        public static Contract IsCellPhone(this Contract contract, string value, string property, string message)
         {
             if(!new Regex(@"^\(\d{2}\)\d{4,5}-\d{4}$").Match(value).Success)
                 contract.AddNotification(property, message);

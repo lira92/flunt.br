@@ -4,11 +4,11 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FD4B7412-F1BB-41BE-85EB-7253DF782A5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentValidator.Br", "src\FluentValidator.Br\FluentValidator.Br.csproj", "{70A09770-EC86-4A1F-93AC-0ED59BC42814}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flunt.Br", "src\Flunt.Br\Flunt.Br.csproj", "{70A09770-EC86-4A1F-93AC-0ED59BC42814}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8FCC7AFF-9E86-4CDE-9A0F-1C7E51BFE7A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentValidator.Br.Tests", "tests\FluentValidator.Br.Tests\FluentValidator.Br.Tests.csproj", "{DD6C9BFA-2B72-4205-AC89-E453A7F518E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flunt.Br.Tests", "tests\Flunt.Br.Tests\Flunt.Br.Tests.csproj", "{DD6C9BFA-2B72-4205-AC89-E453A7F518E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

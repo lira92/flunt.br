@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/tests/FluentValidator.Brazilian.Tests/FluentValidator.Brazilian.Tests.csproj"
+                "${workspaceRoot}/tests/Flunt.Br.Tests/Flunt.Br.Tests.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

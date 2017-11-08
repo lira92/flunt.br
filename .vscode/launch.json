@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceRoot}/tests/FluentValidator.Brazilian.Tests/bin/Debug/netcoreapp2.0/FluentValidator.Brazilian.Tests.dll",
+            "program": "${workspaceRoot}/tests/Flunt.Br.Tests/bin/Debug/netcoreapp2.0/Flunt.Br.Tests.dll",
             "args": [],
-            "cwd": "${workspaceRoot}/tests/FluentValidator.Brazilian.Tests",
+            "cwd": "${workspaceRoot}/tests/Flunt.Br.Tests",
             // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
             "console": "internalConsole",
             "stopAtEntry": false,
