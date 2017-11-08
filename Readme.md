@@ -1,9 +1,9 @@
 # About
 
-Flunt.Br is a lib with a set of extensions for [Flunt](https://github.com/andrebaltieri/flunt]) to validate Brazilian attributes, like cpf, cnpj and phone
+Flunt.Br is a lib with a set of extensions for [Flunt](https://github.com/andrebaltieri/flunt) to validate Brazilian attributes, like cpf, cnpj and phone
 
 # Sobre
-Flunt.Br é uma biblioteca com um conjunto de extensões para o [Flunt](https://github.com/andrebaltieri/flunt]) para validar atributos Brasileiros, como cpf, cnpj e telefone.
+Flunt.Br é uma biblioteca com um conjunto de extensões para o [Flunt](https://github.com/andrebaltieri/flunt) para validar atributos Brasileiros, como cpf, cnpj e telefone.
 
 # Usage
 
