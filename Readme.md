@@ -1,11 +1,29 @@
-# About
+![alt text](https://github.com/lira92/flunt.br/blob/master/assets/flunt-icon-br_compressed.png?raw=true "Flunt.Br")
+
+# Flunt.Br
+
+## About
 
 Flunt.Br is a lib with a set of extensions for [Flunt](https://github.com/andrebaltieri/flunt) to validate Brazilian attributes, like cpf, cnpj and phone
 
-# Sobre
+## Sobre
 Flunt.Br é uma biblioteca com um conjunto de extensões para o [Flunt](https://github.com/andrebaltieri/flunt) para validar atributos Brasileiros, como cpf, cnpj e telefone.
 
-# Usage
+## Instalation / Instalação
+
+This package is available through Nuget Packages / Esse pacote está disponível através de um pacote nuget: https://www.nuget.org/packages/Flunt.Br
+
+**Nuget**
+```
+Install-Package Flunt
+```
+
+**.NET CLI**
+```
+dotnet add package Flunt
+```
+
+## Usage
 
 This lib enables in your validation contracts this methods:
 
@@ -17,7 +35,7 @@ This lib enables in your validation contracts this methods:
       .IsCellPhone(person.cellphone, "Phone", "Invalid cellphone")
   ```
   
-# Como Usar
+## Como Usar
 
 Essa biblioteca possibilita esses métodos em seus Validation Contracts:
 
@@ -28,3 +46,11 @@ Essa biblioteca possibilita esses métodos em seus Validation Contracts:
       .IsPhone(empresa.telefone, "Telefone", "Telefone inválido")
       .IsCellPhone(pessoa.telefone, "Telefone", "Telefone inválido")
   ```
+  
+ ## Contributors
+ 
+The logo was made by [Chrysthowam Santos](https://github.com/chrysthowam), Thanks!
+
+## Contribuidores
+
+A logo foi feita por [Chrysthowam Santos](https://github.com/chrysthowam), Obrigado!
