@@ -70,5 +70,28 @@ namespace Flunt.Br.Tests
                 .IsCellPhone("(45)99999-9999", "cellphone", "Invalid cellphone");
             Assert.AreEqual(true, right.Valid);
         }
+
+        [TestMethod]
+        [DataRow("99999")]
+        [DataRow("abcde-999")]
+        [DataRow("99999-fgh")]
+        [DataRow("abcde-fgh")]
+        [DataRow("abcde999")]
+        [DataRow("99999fgh")]
+        [DataRow("abcdefgh")]
+        public void IsCep_InValid(string cep)
+        {
+            var wrong = new Contract().IsCep(cep, "Cep", "Invalid Cep");
+            Assert.IsFalse(wrong.Valid);            
+        }
+
+        [TestMethod]
+        [DataRow("99999-999")]
+        [DataRow("99999999")]
+        public void IsCep_Valid(string cep)
+        {
+            var right = new Contract().IsCep(cep, "Cep", "Invalid Cep");
+            Assert.IsTrue(right.Valid);
+        }
     }
 }
