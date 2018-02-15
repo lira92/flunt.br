@@ -15,12 +15,12 @@ This package is available through Nuget Packages / Esse pacote está disponível
 
 **Nuget**
 ```
-Install-Package Flunt
+Install-Package Flunt.Br
 ```
 
 **.NET CLI**
 ```
-dotnet add package Flunt
+dotnet add package Flunt.Br
 ```
 
 ## Usage
