@@ -8,66 +8,74 @@ namespace Flunt.Br.Tests
     public class FluntBrTest
     {
         [TestMethod]
-        public void IsCpf_Invalid()
+        [DataRow("12345678910")]
+        public void IsCpf_Invalid(string value)
         {
             var wrong = new Contract()
-                .IsCpf("12345678910", "document", "Invalid document");
+                .IsCpf(value, "document", "Invalid document");
             Assert.AreEqual(false, wrong.Valid);
         }
 
         [TestMethod]
-        public void IsCpf_Valid()
+        [DataRow("08381614996")]
+        public void IsCpf_Valid(string value)
         {
             var right = new Contract()
-                .IsCpf("08381614996", "document", "Invalid document");
+                .IsCpf(value, "document", "Invalid document");
             Assert.AreEqual(true, right.Valid);
         }
 
         [TestMethod]
-        public void IsCnpj_InValid()
+        [DataRow("123456789101112")]
+        public void IsCnpj_InValid(string value)
         {
             var wrong = new Contract()
-                .IsCnpj("123456789101112", "document", "Invalid document");
+                .IsCnpj(value, "document", "Invalid document");
             Assert.AreEqual(false, wrong.Valid);
         }
 
         [TestMethod]
-        public void IsCnpj_Valid()
+        [DataRow("123456789101112")]
+        public void IsCnpj_Valid(string value)
         {
             var right = new Contract()
-                .IsCnpj("58558674000196", "document", "Invalid document");
+                .IsCnpj(value, "document", "Invalid document");
             Assert.AreEqual(true, right.Valid);
         }
 
         [TestMethod]
-        public void IsPhone_InValid()
+        [DataRow("123456789")]
+        public void IsPhone_InValid(string value)
         {
             var wrong = new Contract()
-                .IsPhone("123456789", "phone", "Invalid phone");
+                .IsPhone(value, "phone", "Invalid phone");
             Assert.AreEqual(false, wrong.Valid);
         }
 
         [TestMethod]
-        public void IsPhone_Valid()
+         [DataRow("(45)3222-4520")]
+        public void IsPhone_Valid(string value)
         {
             var right = new Contract()
-                .IsPhone("(45)3222-4520", "phone", "Invalid phone");
+                .IsPhone(value, "phone", "Invalid phone");
             Assert.AreEqual(true, right.Valid);
         }
 
         [TestMethod]
-        public void IsCellPhone_InValid()
+        [DataRow("456456444456")]
+        public void IsCellPhone_InValid(string value)
         {
             var wrong = new Contract()
-                .IsCellPhone("456456444456", "cellphone", "Invalid cellphone");
+                .IsCellPhone(value, "cellphone", "Invalid cellphone");
             Assert.AreEqual(false, wrong.Valid);
         }
 
         [TestMethod]
-        public void IsCellPhone_Valid()
+         [DataRow("(45)99999-9999")]
+        public void IsCellPhone_Valid(string value)
         {
             var right = new Contract()
-                .IsCellPhone("(45)99999-9999", "cellphone", "Invalid cellphone");
+                .IsCellPhone(value, "cellphone", "Invalid cellphone");
             Assert.AreEqual(true, right.Valid);
         }
 
@@ -82,7 +90,7 @@ namespace Flunt.Br.Tests
         public void IsCep_InValid(string cep)
         {
             var wrong = new Contract().IsCep(cep, "Cep", "Invalid Cep");
-            Assert.IsFalse(wrong.Valid);            
+            Assert.IsFalse(wrong.Valid);
         }
 
         [TestMethod]
