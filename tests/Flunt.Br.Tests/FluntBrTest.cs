@@ -35,7 +35,7 @@ namespace Flunt.Br.Tests
         }
 
         [TestMethod]
-        [DataRow("123456789101112")]
+        [DataRow("58558674000196")]
         public void IsCnpj_Valid(string value)
         {
             var right = new Contract()
