@@ -2,6 +2,8 @@
 
 # Flunt.Br
 
+[![Build status](https://ci.appveyor.com/api/projects/status/jbrgxwa6shcmxl4r?svg=true)](https://ci.appveyor.com/project/lira92/flunt-br)
+
 ## About
 
 Flunt.Br is a lib with a set of extensions for [Flunt](https://github.com/andrebaltieri/flunt) to validate Brazilian attributes, like cpf, cnpj, cep and phone
