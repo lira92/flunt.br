@@ -14,9 +14,10 @@ Flunt.Br é uma biblioteca com um conjunto de extensões para o [Flunt](https://
 ## Instalation / Instalação
 
 This package is available through Nuget Packages / Esse pacote está disponível através de um pacote nuget: https://www.nuget.org/packages/Flunt.Br
+ 
+
 
 **Nuget**
-
 ```
 Install-Package Flunt.Br
 ```
