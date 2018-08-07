@@ -7,7 +7,6 @@ namespace Flunt.Br.Tests
     [TestClass]
     public class FluntBrTest
     {
-        
         [TestMethod]
         [DataRow("99999")]
         [DataRow("abcde-999")]
@@ -16,6 +15,7 @@ namespace Flunt.Br.Tests
         [DataRow("abcde999")]
         [DataRow("99999fgh")]
         [DataRow("abcdefgh")]
+        [DataRow(null)]
         public void IsCep_InValid(string cep)
         {
             var wrong = new Contract().IsCep(cep, "Cep", "Invalid Cep");

@@ -10,6 +10,7 @@ namespace Flunt.Br.Tests
         [TestMethod]
         [DataRow("12345678910")]
         [DataRow("124.835.069-34")]
+        [DataRow(null)]
         public void IsCpf_Invalid(string value)
         {
             var wrong = new Contract()
@@ -31,6 +32,7 @@ namespace Flunt.Br.Tests
         [DataRow("123456789101112")]
         [DataRow("655618111115522")]
         [DataRow("45.448.481/0501-18")]
+        [DataRow(null)]
         public void IsCnpj_InValid(string value)
         {
             var wrong = new Contract()
@@ -48,10 +50,11 @@ namespace Flunt.Br.Tests
             Assert.IsTrue(right.Valid);
         }
 
-         [TestMethod]
+        [TestMethod]
         [DataRow("668247690132")]
         [DataRow("333438450601")]
         [DataRow("6568351232550")]
+        [DataRow(null)]
         public void IsVoterDocument_InValid(string value)
         {
             var wrong = new Contract()

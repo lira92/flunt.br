@@ -50,6 +50,7 @@ namespace Flunt.Br.Tests
         [DataRow("+5523 232399999999999")]
         [DataRow("+55 99 999923 923999")]
         [DataRow("+55 99 99999 992399")]
+        [DataRow(null)]
         public void IsPhone_Invalid(string value)
         {
             var wrong = new Contract()
@@ -196,6 +197,7 @@ namespace Flunt.Br.Tests
         [DataRow("+55 99999999", "+55 99999999999")]
         [DataRow("+55 99 9999 99", "+55 99 9999 9999")]
         [DataRow("+55 99 99999 9", "+55 99 99999 9999")]
+        [DataRow(null, "+55 99 99999 9999")]
         public void IsPhoneFormat_Invalid(string value, string formatNumber)
         {
             var wrong = new Contract()
@@ -205,6 +207,7 @@ namespace Flunt.Br.Tests
 
         [TestMethod]
         [DataRow("456456444456")]
+        [DataRow(null)]
         public void IsCellPhone_Invalid(string value)
         {
             var wrong = new Contract().IsCellPhone(value, "cellphone", "Invalid cellphone");
