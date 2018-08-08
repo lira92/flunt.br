@@ -12,6 +12,7 @@ namespace Flunt.Br.Tests
         [DataRow("521586453135936245")]
         [DataRow("601138410090657947")]
         [DataRow("3559716521958")]
+        [DataRow(null)]
         public void IsCreditCard_Invalid(string value)
         {
             var wrong = new Contract()

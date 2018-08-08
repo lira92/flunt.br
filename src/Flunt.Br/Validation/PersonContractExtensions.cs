@@ -8,7 +8,7 @@ namespace Flunt.Br.Validation
     {
         public static Contract IsCpf(this Contract contract, string value, string property, string message)
         {
-            if (!new Cpf().Validate(value))
+            if (string.IsNullOrEmpty(value) || !new Cpf().Validate(value))
                 contract.AddNotification(property, message);
             return contract;
         }
@@ -18,14 +18,14 @@ namespace Flunt.Br.Validation
 
         public static Contract IsCnpj(this Contract contract, string value, string property, string message)
         {
-            if (!new Cnpj().Validate(value))
+            if (string.IsNullOrEmpty(value) || !new Cnpj().Validate(value))
                 contract.AddNotification(property, message);
             return contract;
         }
 
         public static Contract IsVoterDocument(this Contract contract, string value, string property, string message)
         {
-            if (!new VoterDocument().Validate(value))
+            if (string.IsNullOrEmpty(value) || !new VoterDocument().Validate(value))
                 contract.AddNotification(property, message);
             return contract;
         }
