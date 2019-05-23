@@ -31,6 +31,7 @@ namespace Flunt.Br.Tests
         [TestMethod]
         [DataRow("123456789101112")]
         [DataRow("655618111115522")]
+        [DataRow("00000000000abc")]
         [DataRow("45.448.481/0501-18")]
         [DataRow(null)]
         public void IsCnpj_InValid(string value)
