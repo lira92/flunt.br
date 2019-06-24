@@ -42,7 +42,7 @@ namespace Flunt.Br.Document
             }
             else
             {
-                var brazilianPhonePattern = new Regex(@"^(?:(?:\+?55)?[ .-]*\(?0?[1-9][0-9]\)?)?[ .-]?(?:(?:9[ .-]*[0-9]{4}|[7-9][0-9]{3})[ .-]*[0-9]{4})$")
+                var brazilianPhonePattern = new Regex(@"^(?:(?:\+?55)?[ .-]*\(?0?[1-9][0-9]\)?)?[ .-]?(?:(?:9[ .-]*[0-9]{4}|[7-9][0-9]{3})[ .-]*[0-9]{4})$");
                 return brazilianPhonePattern.IsMatch(value);
             }
         }
