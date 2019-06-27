@@ -12,20 +12,27 @@ namespace Flunt.Br.Validation
             return contract;
         }
 
-        public static Contract IsPhone(this Contract contract, string value, string numberFormat, string property, string message)
+        public static Contract IsPhone(this Contract contract, string value, string numberFormat, string property, string message, bool strictNineDigit = false)
         {
-            if (string.IsNullOrEmpty(value) || !new Phone(numberFormat).Validate(value))
+            if (string.IsNullOrEmpty(value) || !new Phone(numberFormat).Validate(value, strictNineDigit))
                 contract.AddNotification(property, message);
             return contract;
         }
 
 
-        public static Contract IsCellPhone(this Contract contract, string value, string property, string message)
+        public static Contract IsCellPhone(this Contract contract, string value, string property, string message, bool strictNineDigit = false)
         {
-            if (string.IsNullOrEmpty(value) || !new Phone("(99) ?9999-9999").Validate(value))
-                if (string.IsNullOrEmpty(value) || !new Phone("(99)?9999-9999").Validate(value))
+            if (string.IsNullOrEmpty(value) || !new Phone().Validate(value))
+                if (string.IsNullOrEmpty(value) || !new Phone().Validate(value, strictNineDigit, true))
                     contract.AddNotification(property, message);
+            return contract;
+        }
 
+        public static Contract IsNewFormatCellPhone(this Contract contract, string value, string property, string message)
+        {
+            if (string.IsNullOrEmpty(value) || !new Phone().Validate(value))
+                if (string.IsNullOrEmpty(value) || !new Phone().Validate(value, true, true))
+                    contract.AddNotification(property, message);
             return contract;
         }
 

@@ -39,6 +39,7 @@ This lib enables in your validation contracts this methods:
       .IsCnpj(company.document, "Document", "Invalid document")
       .IsPhone(company.phone, "Phone", "Invalid phone")
       .IsCellPhone(person.cellphone, "Phone", "Invalid cellphone")
+      .IsCellPhone(person.cellphone, "Phone", "Invalid cellphone", true)
       .IsCep(company.Cep, "Cep", "Invalid Cep")
   ```
   

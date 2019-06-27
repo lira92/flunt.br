@@ -34,7 +34,7 @@ namespace Flunt.Br.Document
             this.format = new Regex(phonePattern);
         }
 
-        public bool Validate(string value)
+        public bool Validate(string value, bool strictNineDigit = false, bool cellPhonesOnly = false)
         {
             if (this.format != null)
             {
@@ -42,7 +42,13 @@ namespace Flunt.Br.Document
             }
             else
             {
-                var brazilianPhonePattern = new Regex(@"^(?:(?:\+?55)?[ .-]*\(?0?[1-9][0-9]\)?)[ .-]?(?:(?:9[ .-]*[0-9]{4}|[1-7][0-9]{3})[ .-]*[0-9]{4})$");
+                var brazilianPhonePattern = cellPhonesOnly
+                    ? strictNineDigit
+                        ? new Regex(@"^(?:(?:\+?55)?[ .-]*\(?0?[1-9][0-9]\)?)[ .-]?(?:(?:(?:9[ .-]*)[0-9]{4})[ .-]*[0-9]{4})$")
+                        : new Regex(@"^(?:(?:\+?55)?[ .-]*\(?0?[1-9][0-9]\)?)[ .-]?(?:(?:(?:9[ .-]*)[0-9]{4}|[8-9][0-9]{3})[ .-]*[0-9]{4})$")
+                    : strictNineDigit
+                        ? new Regex(@"^(?:(?:\+?55)?[ .-]*\(?0?[1-9][0-9]\)?)[ .-]?(?:(?:9[ .-]*[0-9]{4}|[1-7][0-9]{3})[ .-]*[0-9]{4})$")
+                        : new Regex(@"^(?:(?:\+?55)?[ .-]*\(?0?[1-9][0-9]\)?)[ .-]?(?:(?:(?:9[ .-]*)?[0-9]{4})[ .-]*[0-9]{4})$");
                 return brazilianPhonePattern.IsMatch(value);
             }
         }
