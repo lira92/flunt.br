@@ -268,7 +268,7 @@ namespace Flunt.Br.Tests
         [DataRow("+55(99)9999-9999")]
         [DataRow("+55 (99) 9999-9999")]
         [DataRow("+55 (99) 9999-9999")]
-        
+
         public void IsNewCellPhone_Invalid(string value)
         {
             var right = new Contract().IsNewFormatCellPhone(value, "cellphone", "Invalid cellphone");

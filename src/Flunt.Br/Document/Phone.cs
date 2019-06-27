@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Flunt.Br.Document
 {
-    internal class Phone : IValidate
+    internal class Phone : IValidateV2
     {
 
         public Phone()
