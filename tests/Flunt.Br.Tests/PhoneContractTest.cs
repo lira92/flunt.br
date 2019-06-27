@@ -228,7 +228,6 @@ namespace Flunt.Br.Tests
         [DataRow("456456444456")]
         [DataRow("(45)3333-3333")]
         [DataRow("(99) 8 9999-9999")]
-        [DataRow("+55 (99) 3333-4444")]
         [DataRow(null)]
         public void IsCellPhone_Invalid(string value)
         {
@@ -268,6 +267,7 @@ namespace Flunt.Br.Tests
         [DataRow("+55(99)9999-9999")]
         [DataRow("+55 (99) 9999-9999")]
         [DataRow("+55 (99) 9999-9999")]
+        [DataRow("+55 (99) 3333-4444")]
 
         public void IsNewCellPhone_Invalid(string value)
         {
