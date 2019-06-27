@@ -16,8 +16,8 @@ namespace Flunt.Br.Tests
         [DataRow("(99)9956999-9999")]
         [DataRow("59-9999")]
         [DataRow("999-9999")]
-        [DataRow("9995996666399999")]
         [DataRow("999999999")]
+        [DataRow("9995996666399999")]
         [DataRow("99 922999 9963699")]
         [DataRow("99 9994599 922999")]
         [DataRow("55(99) 9999-992299")]
@@ -59,46 +59,65 @@ namespace Flunt.Br.Tests
         }
 
         [TestMethod]
-        [DataRow("(99) 9999-9999")]
+        [DataRow("(99) 3999-9999")]
         [DataRow("(99) 99999-9999")]
-        [DataRow("(99)9999-9999")]
         [DataRow("(99)99999-9999")]
-        [DataRow("999999-9999")]
+        [DataRow("993999-9999")]
         [DataRow("9999999-9999")]
-        [DataRow("9999999999")]
+        [DataRow("9939999999")]
         [DataRow("99999999999")]
-        [DataRow("99 9999 9999")]
+        [DataRow("99 3999 9999")]
         [DataRow("99 99999 9999")]
-        [DataRow("55(99) 9999-9999")]
+        [DataRow("55(99) 3999-9999")]
         [DataRow("55(99) 99999-9999")]
-        [DataRow("55(99)9999-9999")]
+        [DataRow("55(99)3999-9999")]
         [DataRow("55(99)99999-9999")]
-        [DataRow("55999999-9999")]
+        [DataRow("55993999-9999")]
         [DataRow("559999999-9999")]
-        [DataRow("559999999999")]
+        [DataRow("559939999999")]
         [DataRow("5599999999999")]
-        [DataRow("5599 9999 9999")]
+        [DataRow("5599 3999 9999")]
         [DataRow("5599 99999 9999")]
-        [DataRow("55 (99) 9999-9999")]
+        [DataRow("55 (99) 3999-9999")]
         [DataRow("55 (99) 99999-9999")]
-        [DataRow("55 (99)9999-9999")]
+        [DataRow("55 (99)3999-9999")]
         [DataRow("55 (99)99999-9999")]
-        [DataRow("55 999999-9999")]
+        [DataRow("55 993999-9999")]
         [DataRow("55 9999999-9999")]
-        [DataRow("55 9999999999")]
+        [DataRow("55 9939999999")]
         [DataRow("55 99999999999")]
-        [DataRow("55 99 9999 9999")]
+        [DataRow("55 99 3999 9999")]
         [DataRow("55 99 99999 9999")]
-        [DataRow("+55 (99) 9999-9999")]
+        [DataRow("+55 (99) 3999-9999")]
         [DataRow("+55 (99) 99999-9999")]
-        [DataRow("+55 (99)9999-9999")]
+        [DataRow("+55 (99)3999-9999")]
         [DataRow("+55 (99)99999-9999")]
-        [DataRow("+55 999999-9999")]
+        [DataRow("+55 993999-9999")]
         [DataRow("+55 9999999-9999")]
-        [DataRow("+55 9999999999")]
+        [DataRow("+55 9939999999")]
         [DataRow("+55 99999999999")]
-        [DataRow("+55 99 9999 9999")]
+        [DataRow("+55 99 3999 9999")]
         [DataRow("+55 99 99999 9999")]
+        [DataRow("(99) 9999-9999")]
+        [DataRow("999999-9999")]
+        [DataRow("9999999999")]
+        [DataRow("99 9999 9999")]
+        [DataRow("55(99) 9999-9999")]
+        [DataRow("55(99)9999-9999")]
+        [DataRow("55999999-9999")]
+        [DataRow("559999999999")]
+        [DataRow("5599 9999 9999")]
+        [DataRow("55 (99) 9999-9999")]
+        [DataRow("55 (99)9999-9999")]
+        [DataRow("(99)9999-9999")]
+        [DataRow("55 999999-9999")]
+        [DataRow("55 9999999999")]
+        [DataRow("55 99 9999 9999")]
+        [DataRow("+55 (99) 9999-9999")]
+        [DataRow("+55 (99)9999-9999")]
+        [DataRow("+55 999999-9999")]
+        [DataRow("+55 9999999999")]
+        [DataRow("+55 99 9999 9999")]
         public void IsPhone_Valid(string value)
         {
             var right = new Contract()
@@ -108,7 +127,7 @@ namespace Flunt.Br.Tests
 
         [TestMethod]
         [DataRow("(99) 9999-9999", "(99) ?9999-9999")]
-          [DataRow("(99) 99999-9999", "(99) ?9999-9999")]
+        [DataRow("(99) 99999-9999", "(99) ?9999-9999")]
         [DataRow("(99) 9999-9999", "(99) 9999-9999")]
         [DataRow("(99) 99999-9999", "(99) 99999-9999")]
         [DataRow("(99)9999-9999", "(99)9999-9999")]
@@ -207,6 +226,8 @@ namespace Flunt.Br.Tests
 
         [TestMethod]
         [DataRow("456456444456")]
+        [DataRow("(45)3333-3333")]
+        [DataRow("(99) 8 9999-9999")]
         [DataRow(null)]
         public void IsCellPhone_Invalid(string value)
         {
@@ -216,12 +237,43 @@ namespace Flunt.Br.Tests
 
         [TestMethod]
         [DataRow("(45)99999-9999")]
+        [DataRow("+55(99)99999-9999")]
+        [DataRow("+55(99)9-9999-9999")]
+        [DataRow("+55 (99) 9999-9999")]
+        [DataRow("+55 (99) 9999-9999")]
+        
         public void IsCellPhone_Valid(string value)
         {
             var right = new Contract().IsCellPhone(value, "cellphone", "Invalid cellphone");
             Assert.IsTrue(right.Valid);
         }
 
+        [TestMethod]
+        [DataRow("4599999999")]
+        [DataRow("+55(99)9999-9999")]
+        [DataRow("+55(99)9999-9999")]
+        [DataRow("+55 (99) 9999-9999")]
+        [DataRow("+55 (99) 9999-9999")]
+        [DataRow("+55 (99) 3333-4444")]
+
+        public void IsNewCellPhone_Invalid(string value)
+        {
+            var wrong = new Contract().IsNewFormatCellPhone(value, "cellphone", "Invalid cellphone");
+            Assert.IsFalse(wrong.Valid);
+        }
+
+        [TestMethod]
+        [DataRow("45999999999")]
+        [DataRow("+55(99)99999-9999")]
+        [DataRow("+55(99)9.9999-9999")]
+        [DataRow("+55 (99) 9-9999-9999")]
+        [DataRow("+55 (99) 9 9999-9999")]
+
+        public void IsNewCellPhone_Valid(string value)
+        {
+            var right = new Contract().IsNewFormatCellPhone(value, "cellphone", "Invalid cellphone");
+            Assert.IsTrue(right.Valid);
+        }
 
     }
 }
