@@ -22,17 +22,15 @@ namespace Flunt.Br.Validation
 
         public static Contract IsCellPhone(this Contract contract, string value, string property, string message, bool strictNineDigit = false)
         {
-            if (string.IsNullOrEmpty(value) || !new Phone().Validate(value))
-                if (string.IsNullOrEmpty(value) || !new Phone().Validate(value, strictNineDigit, true))
-                    contract.AddNotification(property, message);
+            if (string.IsNullOrEmpty(value) || !new Phone().Validate(value, strictNineDigit, true))
+                contract.AddNotification(property, message);
             return contract;
         }
 
         public static Contract IsNewFormatCellPhone(this Contract contract, string value, string property, string message)
         {
-            if (string.IsNullOrEmpty(value) || !new Phone().Validate(value))
-                if (string.IsNullOrEmpty(value) || !new Phone().Validate(value, true, true))
-                    contract.AddNotification(property, message);
+            if (string.IsNullOrEmpty(value) || !new Phone().Validate(value, true, true))
+                contract.AddNotification(property, message);
             return contract;
         }
 
