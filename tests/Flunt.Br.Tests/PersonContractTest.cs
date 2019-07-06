@@ -1,6 +1,6 @@
-using Flunt.Br.Validation;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Flunt.Br.Extensions;
 using Flunt.Validations;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Flunt.Br.Tests
 {

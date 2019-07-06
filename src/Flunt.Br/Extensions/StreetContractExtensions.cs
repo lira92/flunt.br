@@ -1,7 +1,7 @@
-using Flunt.Br.Document;
+using Flunt.Br.Validations;
 using Flunt.Validations;
 
-namespace Flunt.Br.Validation
+namespace Flunt.Br.Extensions
 {
     public static partial class ContractExtensions
     {

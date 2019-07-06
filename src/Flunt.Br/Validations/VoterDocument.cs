@@ -1,13 +1,13 @@
-using System;
+using Flunt.Br.Document.Interfaces;
 using System.Text.RegularExpressions;
-using Flunt.Br.Document.interfaces;
-using System.Collections.Generic;
 
-namespace Flunt.Br.Document
+namespace Flunt.Br.Validations
 {
     internal class VoterDocument : IValidate
     {
-        public bool Validate(string value)
+        public bool Validate(string value) => Validate(value, null);
+
+        public bool Validate(string value, IValidationOptions options)
         {
             int d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, DV1, DV2, UltDig;
 
@@ -68,17 +68,9 @@ namespace Flunt.Br.Document
                 {
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
-
-            }
-            else
-            {
                 return false;
             }
-
+            return false;
         }
     }
 }

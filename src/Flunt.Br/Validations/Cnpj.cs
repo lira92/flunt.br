@@ -1,11 +1,12 @@
-using Flunt.Br.Document.interfaces;
-using System;
+using Flunt.Br.Document.Interfaces;
 
-namespace Flunt.Br.Document
+namespace Flunt.Br.Validations
 {
     internal class Cnpj : IValidate
     {
-        public bool Validate(string value)
+        public bool Validate(string value) => Validate(value, null);
+
+        public bool Validate(string value, IValidationOptions options)
         {
             var multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             var multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };

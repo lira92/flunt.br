@@ -1,7 +1,7 @@
-using Flunt.Br.Document;
+using Flunt.Br.Validations.PhoneValidations;
 using Flunt.Validations;
 
-namespace Flunt.Br.Validation
+namespace Flunt.Br.Extensions
 {
     public static partial class ContractExtensions
     {
@@ -14,25 +14,26 @@ namespace Flunt.Br.Validation
 
         public static Contract IsPhone(this Contract contract, string value, string numberFormat, string property, string message, bool strictNineDigit = false)
         {
-            if (string.IsNullOrEmpty(value) || !new Phone(numberFormat).Validate(value, strictNineDigit))
+            var result = new Phone().Validate(value, new PhoneValidationOptions { Format = numberFormat, StrictNineDigit = strictNineDigit });
+            if (string.IsNullOrEmpty(value) || !result)
                 contract.AddNotification(property, message);
             return contract;
         }
 
-
         public static Contract IsCellPhone(this Contract contract, string value, string property, string message, bool strictNineDigit = false)
         {
-            if (string.IsNullOrEmpty(value) || !new Phone().Validate(value, strictNineDigit, true))
+            var result = new Phone().Validate(value, new PhoneValidationOptions { StrictNineDigit = strictNineDigit, CellPhonesOnly = true});
+            if (string.IsNullOrEmpty(value) || !result)
                 contract.AddNotification(property, message);
             return contract;
         }
 
         public static Contract IsNewFormatCellPhone(this Contract contract, string value, string property, string message)
         {
-            if (string.IsNullOrEmpty(value) || !new Phone().Validate(value, true, true))
+            var result = new Phone().Validate(value, new PhoneValidationOptions { StrictNineDigit = true, CellPhonesOnly = true });
+            if (string.IsNullOrEmpty(value) || !result)
                 contract.AddNotification(property, message);
             return contract;
         }
-
     }
 }
