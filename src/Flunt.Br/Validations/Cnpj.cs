@@ -4,9 +4,7 @@ namespace Flunt.Br.Validations
 {
     internal class Cnpj : IValidate
     {
-        public bool Validate(string value) => Validate(value, null);
-
-        public bool Validate(string value, IValidationOptions options)
+        public bool Validate(string value)
         {
             var multiplicador1 = new int[12] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             var multiplicador2 = new int[13] { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };

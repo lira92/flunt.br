@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Flunt.Br.Validations.PhoneValidations
 {
-    internal class PhoneValidationOptions: IValidationOptions
+    internal class PhoneValidationOptions
     {
         public bool StrictNineDigit { get; set; }
         public bool CellPhonesOnly { get; set; }

@@ -6,8 +6,6 @@ namespace Flunt.Br.Validations
 {
     internal class CreditCard : IValidate
     {
-        public bool Validate(string value) => Validate(value, null);
-
         private static bool IsValidLuhnn(string val)
         {
             var valSum = 0;
@@ -25,7 +23,7 @@ namespace Flunt.Br.Validations
             return (valSum > 0 && valSum % 10 == 0);
         }
 
-        public bool Validate(string value, IValidationOptions options)
+        public bool Validate(string value)
         {
             value = new Regex(@"['\""&,\\]|\s{2,}").Replace(value, "").Trim();
             if (!new Regex(@"[0-9]+").IsMatch(value)) return false;

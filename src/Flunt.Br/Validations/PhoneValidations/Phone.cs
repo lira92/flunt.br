@@ -5,27 +5,36 @@ namespace Flunt.Br.Validations.PhoneValidations
 {
     internal class Phone : IValidate
     {
-        private static readonly Regex _defaultFormat = new Regex(@"^(?:(?:\+?55)?[ .-]*\(?0?[1-9][0-9]\)?)[ .-]?(?:(?:(?:9[ .-]*)?[0-9]{4})[ .-]*[0-9]{4})$");
-        public bool Validate(string value) => Validate(value, null);
+        private readonly PhoneValidationOptions _validationOptions;
 
-        public bool Validate(string value, IValidationOptions options)
+        private static readonly Regex _defaultFormat = new Regex(@"^(?:(?:\+?55)?[ .-]*\(?0?[1-9][0-9]\)?)[ .-]?(?:(?:(?:9[ .-]*)?[0-9]{4})[ .-]*[0-9]{4})$");
+
+        public Phone(PhoneValidationOptions validationOptions)
+        {
+            _validationOptions = validationOptions;
+        }
+
+        public Phone()
+        {
+            _validationOptions = new PhoneValidationOptions();
+        }
+
+        public bool Validate(string value)
         {
             if (string.IsNullOrEmpty(value))
             {
                 return false;
             }
-            var formatToApply = _defaultFormat;
-            if (options is PhoneValidationOptions phoneOptions)
+
+            Regex formatToApply;
+            if (_validationOptions.Format != null)
             {
-                if (phoneOptions.Format != null)
-                {
-                    formatToApply = HandleCustomFormat(phoneOptions.Format);
+                formatToApply = HandleCustomFormat(_validationOptions.Format);
 
-                    return formatToApply.IsMatch(value);
-                }
-
-                formatToApply = SetFormatBaseOnOptions(phoneOptions);
+                return formatToApply.IsMatch(value);
             }
+
+            formatToApply = SetFormatBaseOnOptions(_validationOptions);
             return formatToApply.IsMatch(value);
         }
 

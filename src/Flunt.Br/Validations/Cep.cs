@@ -5,9 +5,7 @@ namespace Flunt.Br.Validations
 {
     internal class Cep : IValidate
     {
-        public bool Validate(string value) => Validate(value, null);
-
-        public bool Validate(string value, IValidationOptions options)
+        public bool Validate(string value)
         {
             if (value.IndexOf("-") > 0)
             {

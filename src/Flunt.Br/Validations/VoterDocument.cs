@@ -5,9 +5,7 @@ namespace Flunt.Br.Validations
 {
     internal class VoterDocument : IValidate
     {
-        public bool Validate(string value) => Validate(value, null);
-
-        public bool Validate(string value, IValidationOptions options)
+        public bool Validate(string value)
         {
             int d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, DV1, DV2, UltDig;
 

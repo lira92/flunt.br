@@ -14,7 +14,7 @@ namespace Flunt.Br.Extensions
 
         public static Contract IsPhone(this Contract contract, string value, string numberFormat, string property, string message, bool strictNineDigit = false)
         {
-            var result = new Phone().Validate(value, new PhoneValidationOptions { Format = numberFormat, StrictNineDigit = strictNineDigit });
+            var result = new Phone(new PhoneValidationOptions { Format = numberFormat, StrictNineDigit = strictNineDigit }).Validate(value);
             if (string.IsNullOrEmpty(value) || !result)
                 contract.AddNotification(property, message);
             return contract;
@@ -22,7 +22,7 @@ namespace Flunt.Br.Extensions
 
         public static Contract IsCellPhone(this Contract contract, string value, string property, string message, bool strictNineDigit = false)
         {
-            var result = new Phone().Validate(value, new PhoneValidationOptions { StrictNineDigit = strictNineDigit, CellPhonesOnly = true});
+            var result = new Phone(new PhoneValidationOptions { StrictNineDigit = strictNineDigit, CellPhonesOnly = true }).Validate(value);
             if (string.IsNullOrEmpty(value) || !result)
                 contract.AddNotification(property, message);
             return contract;
@@ -30,7 +30,7 @@ namespace Flunt.Br.Extensions
 
         public static Contract IsNewFormatCellPhone(this Contract contract, string value, string property, string message)
         {
-            var result = new Phone().Validate(value, new PhoneValidationOptions { StrictNineDigit = true, CellPhonesOnly = true });
+            var result = new Phone(new PhoneValidationOptions { StrictNineDigit = true, CellPhonesOnly = true }).Validate(value);
             if (string.IsNullOrEmpty(value) || !result)
                 contract.AddNotification(property, message);
             return contract;
