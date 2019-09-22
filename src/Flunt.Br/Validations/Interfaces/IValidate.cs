@@ -1,4 +1,4 @@
-namespace Flunt.Br.Document.interfaces
+namespace Flunt.Br.Document.Interfaces
 {
     internal interface IValidate
     {

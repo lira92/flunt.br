@@ -1,9 +1,7 @@
-using System;
+using Flunt.Br.Document.Interfaces;
 using System.Text.RegularExpressions;
-using Flunt.Br.Document.interfaces;
-using System.Collections.Generic;
 
-namespace Flunt.Br.Document
+namespace Flunt.Br.Validations
 {
     internal class VoterDocument : IValidate
     {
@@ -68,17 +66,9 @@ namespace Flunt.Br.Document
                 {
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
-
-            }
-            else
-            {
                 return false;
             }
-
+            return false;
         }
     }
 }

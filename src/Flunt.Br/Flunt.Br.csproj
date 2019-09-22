@@ -14,6 +14,6 @@
     <PackageTags>Validation;Flunt.Br;Flunt;Cnpj;Cpf;Telefone;Cep</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Flunt" Version="1.0.3" />
+    <PackageReference Include="Flunt" Version="1.0.4" />
   </ItemGroup>
 </Project>

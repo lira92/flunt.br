@@ -1,7 +1,6 @@
-using Flunt.Br.Document.interfaces;
-using System;
+using Flunt.Br.Document.Interfaces;
 
-namespace Flunt.Br.Document
+namespace Flunt.Br.Validations
 {
     internal class Cnpj : IValidate
     {

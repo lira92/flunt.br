@@ -1,4 +1,4 @@
-using Flunt.Br.Validation;
+using Flunt.Br.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Flunt.Validations;
 
