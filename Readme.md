@@ -41,6 +41,8 @@ This lib enables in your validation contracts this methods:
       .IsCellPhone(person.cellphone, "Phone", "Invalid cellphone")
       .IsNewFormatCellPhone(person.cellphone, "Phone", "Invalid cellphone")
       .IsCep(company.Cep, "Cep", "Invalid Cep")
+      .IsVoterDocument(person.VoterDocument, "VoterDocument", "Invalid Voter Document")
+      .IsCreditCard(person.CreditCardNumber, "CreditCardNumber", "Invalid Credit Card");
   ```
   
 ## Como Usar
@@ -54,7 +56,9 @@ Essa biblioteca possibilita esses métodos em seus Validation Contracts:
       .IsPhone(empresa.telefone, "Telefone", "Telefone inválido")
       .IsCellPhone(pessoa.telefone, "Telefone", "Telefone inválido")
       .IsNewFormatCellPhone(pessoa.telefone, "Telefone", "Telefone inválido")
-      .IsCep(company.Cep, "Cep", "Cep Inválido");
+      .IsCep(company.Cep, "Cep", "Cep Inválido")
+      .IsVoterDocument(person.VoterDocument, "TituloDoEleitor", "Título do Eleitor inválido")
+      .IsCreditCard(person.CreditCardNumber, "NumeroCartaoDeCredito", "Número de cartão de crédito inválido");
   ```
   
  ## Contributors
