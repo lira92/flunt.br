@@ -33,7 +33,7 @@ dotnet add package Flunt.Br
 
 This lib enables in your validation contracts this methods:
 
-  ```
+  ```csharp
   var contratct = new Contract()
       .IsCpf(person.document, "Document", "Invalid document")
       .IsCnpj(company.document, "Document", "Invalid document")
@@ -49,7 +49,7 @@ This lib enables in your validation contracts this methods:
 
 Essa biblioteca possibilita esses métodos em seus Validation Contracts:
 
-  ```
+  ```csharp
   var contratct = new Contract()
       .IsCpf(pessoa.documento, "Documento", "Documento inválido")
       .IsCnpj(empresa.documento, "Documento", "Documento inválido")
