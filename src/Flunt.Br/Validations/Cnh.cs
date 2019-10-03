@@ -3,7 +3,7 @@ using Flunt.Br.Document.Interfaces;
 
 namespace Flunt.Br.Validations
 {
-    internal class Cnh : Ivalidate
+    internal class Cnh : IValidate
     {
         public bool Validate(string valor)
         {
