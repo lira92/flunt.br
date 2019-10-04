@@ -73,5 +73,29 @@ namespace Flunt.Br.Tests
                 .IsVoterDocument(value, "document", "Invalid document");
             Assert.IsTrue(right.Valid);
         }
+
+
+        [TestMethod]
+        [DataRow("668247690132")]
+        [DataRow("333438450601")]
+        [DataRow("6568351232550")]
+        [DataRow(null)]
+        public void IsCnh_Invalid(string value)
+        {
+            var wrong = new Contract()
+                .IsCnh(value, "document", "Invalid document");
+            Assert.IsFalse(wrong.Valid);
+        }
+
+        [TestMethod]
+        [DataRow("09974348506")]
+        [DataRow("32983022807")]
+        [DataRow("93642298453")]
+        public void IsCnh_Valid(string value)
+        {
+            var right = new Contract()
+                .IsCnh(value, "document", "Invalid document");
+            Assert.IsTrue(right.Valid);
+        }
     }
 }
