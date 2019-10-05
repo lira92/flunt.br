@@ -12,7 +12,7 @@ namespace Flunt.Br.Tests
 
         [TestMethod]
         [DataRow("ABC1A1")]        
-        public void ShouldBeAbleToReturnFalseGivinCarLicensePlateWithLessThan7Characters(string value)
+        public void ShouldBeAbleToReturnFalseGivingCarLicensePlateWithLessThan7Characters(string value)
         {
             //Arrange
             var contract = new Contract();
@@ -33,7 +33,7 @@ namespace Flunt.Br.Tests
         [DataRow("DLCZ946")]    
         [DataRow("DLC94Z6")]    
         [DataRow("DLC946Z")]    
-        public void ShouldBeAbleToReturnFalseGivinInvalidPatternCarLicensePlate(string value)
+        public void ShouldBeAbleToReturnFalseGivingInvalidPatternCarLicensePlate(string value)
         {
             //Arrange
             var contract = new Contract();
@@ -48,7 +48,7 @@ namespace Flunt.Br.Tests
         [TestMethod]        
         [DataRow("")]        
         [DataRow(null)]
-        public void ShouldBeAbleToReturnFalseGivinEmptyCarLicensePlate(string value)
+        public void ShouldBeAbleToReturnFalseGivingEmptyCarLicensePlate(string value)
         {
            //Arrange
             var contract = new Contract();
@@ -67,7 +67,7 @@ namespace Flunt.Br.Tests
         [DataRow("KDA1E18")]    
         [DataRow("LOL8Y11")]    
         [DataRow("LMA0I11")]    
-        public void ShouldBeAbleToReturnTrueGivinValidCarLicensePlate(string value)
+        public void ShouldBeAbleToReturnTrueGivingValidCarLicensePlate(string value)
         {
             //Arrange
             var contract = new Contract();
