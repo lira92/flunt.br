@@ -30,9 +30,9 @@ namespace Flunt.Br.Extensions
             return contract;
         }
 
-        public static Contract isCnh(this Contract contract, string value, string property, string message)
+        public static Contract IsCnh(this Contract contract, string value, string property, string message)
         {
-            if(string.IsNullOrEmpty(value) || !new Cpf().Validate(value))
+            if(string.IsNullOrEmpty(value) || !new Cnh().Validate(value))
                 contract.AddNotification(property,message);
             return contract;
         }
