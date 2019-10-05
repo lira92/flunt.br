@@ -24,8 +24,7 @@ namespace Flunt.Br.Tests
             Assert.IsFalse(actual.Valid);
         }
 
-        [TestMethod]
-        [DataRow("ABC1111")]        
+        [TestMethod]              
         [DataRow("1111ABC")]        
         [DataRow("AB11ABC")]    
         [DataRow("1ABCDEF")]    
@@ -61,6 +60,10 @@ namespace Flunt.Br.Tests
         }
 
         [TestMethod]        
+        [DataRow("GAG1A11")]  
+        [DataRow("RAR2150")]  
+        [DataRow("LOL9999")]  
+        [DataRow("ABC1111")]  
         [DataRow("ABC1A23")]                
         [DataRow("DLC9Z46")]    
         [DataRow("IVY1X99")]    
