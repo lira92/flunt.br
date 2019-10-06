@@ -11,5 +11,19 @@ namespace Flunt.Br.Extensions
                 contract.AddNotification(property, message);
             return contract;
         }
+
+        public static Contract IsMercosulCarLicensePlate(this Contract contract, string value, string property, string message)
+        {
+            if (string.IsNullOrEmpty(value) || !new MercosulCarLicensePlate().Validate(value))
+                contract.AddNotification(property, message);
+            return contract;
+        }
+
+        public static Contract IsOldCarLicensePlate(this Contract contract, string value, string property, string message)
+        {
+            if (string.IsNullOrEmpty(value) || !new OldCarLicensePlate().Validate(value))
+                contract.AddNotification(property, message);
+            return contract;
+        }
     }
 }
