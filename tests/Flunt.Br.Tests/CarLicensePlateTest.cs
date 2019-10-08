@@ -70,6 +70,7 @@ namespace Flunt.Br.Tests
         [DataRow("KDA1E18")]
         [DataRow("LOL8Y11")]
         [DataRow("LMA0I11")]
+        [DataRow("LMA-0I11")]
         public void ShouldBeAbleToReturnTrueGivingValidCarLicensePlate(string value)
         {
             //Arrange
@@ -93,6 +94,7 @@ namespace Flunt.Br.Tests
         [DataRow("KDA1718")]
         [DataRow("LOL8811")]
         [DataRow("LMA0611")]
+        [DataRow("LMA-0611")]
         public void ShouldBeAbleToReturnTrueGivingValidOldCarLicensePlate(string value)
         {
             //Arrange
@@ -116,6 +118,9 @@ namespace Flunt.Br.Tests
         [DataRow("KDA118")]
         [DataRow("DLC94Z6")]
         [DataRow("LMA0I11")]
+        [DataRow("LMA0--11")]        
+        [DataRow("LMA--0611")]
+        [DataRow("LMA-061")]
         public void ShouldBeAbleToReturnFalseGivingInvalidPatternOldCarLicensePlate(string value)
         {
             //Arrange
@@ -139,6 +144,7 @@ namespace Flunt.Br.Tests
         [DataRow("KDA1E18")]
         [DataRow("LOL8Y11")]
         [DataRow("LMA0I11")]
+        [DataRow("LMA-0I11")]
         public void ShouldBeAbleToReturnTrueGivingValidMercosulCarLicensePlate(string value)
         {
             //Arrange
