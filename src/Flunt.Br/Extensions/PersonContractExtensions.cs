@@ -29,5 +29,12 @@ namespace Flunt.Br.Extensions
                 contract.AddNotification(property, message);
             return contract;
         }
+
+        public static Contract IsCnh(this Contract contract, string value, string property, string message)
+        {
+            if(string.IsNullOrEmpty(value) || !new Cnh().Validate(value))
+                contract.AddNotification(property,message);
+            return contract;
+        }
     }
 }
