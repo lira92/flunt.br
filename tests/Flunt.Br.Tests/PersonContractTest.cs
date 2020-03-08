@@ -11,6 +11,16 @@ namespace Flunt.Br.Tests
         [DataRow("12345678910")]
         [DataRow("124.835.069-34")]
         [DataRow(null)]
+        [DataRow("000.000.000-00")]
+        [DataRow("111.111.111-11")]
+        [DataRow("222.222.222-22")]
+        [DataRow("333.333.333-33")]
+        [DataRow("444-444.444-44")]
+        [DataRow("555.555.555-55")]
+        [DataRow("666.666.666-66")]
+        [DataRow("777.777.777-77")]
+        [DataRow("888.888.888-88")]
+        [DataRow("999.999.999-99")]
         public void IsCpf_Invalid(string value)
         {
             var wrong = new Contract()
