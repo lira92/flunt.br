@@ -18,3 +18,4 @@ bld/
 !.vscode/extensions.json
 .vs/
 .history
+.idea/
