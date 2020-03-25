@@ -1,9 +1,17 @@
+using System.Linq;
 using Flunt.Br.Document.Interfaces;
 
 namespace Flunt.Br.Validations
 {
     internal class Cpf : IValidate
     {
+        private readonly string[] cpfInvalid =
+        {
+            "00000000000", "11111111111", "22222222222",
+            "33333333333", "44444444444", "55555555555",
+            "66666666666", "77777777777", "88888888888", "99999999999"
+        };
+
         public bool Validate(string value)
         {
             var multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -14,7 +22,7 @@ namespace Flunt.Br.Validations
             int resto;
             value = value.Trim();
             value = value.Replace(".", "").Replace("-", "");
-            if (value.Length != 11)
+            if (value.Length != 11 || cpfInvalid.Contains(value))
                 return false;
             tempCpf = value.Substring(0, 9);
             soma = 0;
