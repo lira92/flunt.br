@@ -10,6 +10,16 @@ namespace Flunt.Br.Tests
         [TestMethod]
         [DataRow("12345678910")]
         [DataRow("124.835.069-34")]
+        [DataRow("000.000.000-00")]
+        [DataRow("111.111.111-11")]
+        [DataRow("222.222.222-22")]
+        [DataRow("333.333.333-33")]
+        [DataRow("444-444.444-44")]
+        [DataRow("555.555.555-55")]
+        [DataRow("666.666.666-66")]
+        [DataRow("777.777.777-77")]
+        [DataRow("888.888.888-88")]
+        [DataRow("999.999.999-99")]
         [DataRow(null)]
         public void IsCpf_Invalid(string value)
         {
@@ -33,6 +43,16 @@ namespace Flunt.Br.Tests
         [DataRow("655618111115522")]
         [DataRow("00000000000abc")]
         [DataRow("45.448.481/0501-18")]
+        [DataRow("00.000.000/0000-00")]
+        [DataRow("11.111.111/1111-11")]
+        [DataRow("22.222.222/2222-22")]
+        [DataRow("33.333.333/3333-33")]
+        [DataRow("44.444.444/4444-44")]
+        [DataRow("55.555.555/5555-55")]
+        [DataRow("66.666.666/6666-66")]
+        [DataRow("77.777.777/7777-77")]
+        [DataRow("88.888.888/8888-88")]
+        [DataRow("99.999.999/9999-99")]
         [DataRow(null)]
         public void IsCnpj_InValid(string value)
         {
