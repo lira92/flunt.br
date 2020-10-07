@@ -1,6 +1,6 @@
+using System;
 using Flunt.Br.Validations;
 using Flunt.Validations;
-using System;
 
 namespace Flunt.Br.Extensions
 {
@@ -23,16 +23,12 @@ namespace Flunt.Br.Extensions
             return contract;
         }
 
-
         public static Contract IsCnpjOrCPF(this Contract contract, string value, string property, string message)
         {
-            var isCNPJ =  new Cnpj().Validate(value ?? string.Empty);
-            var isCPF = new Cpf().Validate(value ?? string.Empty);
-            if (string.IsNullOrEmpty(value) || (!isCNPJ && !isCPF))
+            if (string.IsNullOrEmpty(value) || (!new Cnpj().Validate(value) && !new Cpf().Validate(value)))
                 contract.AddNotification(property, message);
             return contract;
         }
-
 
         public static Contract IsVoterDocument(this Contract contract, string value, string property, string message)
         {
@@ -43,8 +39,8 @@ namespace Flunt.Br.Extensions
 
         public static Contract IsCnh(this Contract contract, string value, string property, string message)
         {
-            if(string.IsNullOrEmpty(value) || !new Cnh().Validate(value))
-                contract.AddNotification(property,message);
+            if (string.IsNullOrEmpty(value) || !new Cnh().Validate(value))
+                contract.AddNotification(property, message);
             return contract;
         }
     }
