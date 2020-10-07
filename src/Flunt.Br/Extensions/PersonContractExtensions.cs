@@ -23,6 +23,17 @@ namespace Flunt.Br.Extensions
             return contract;
         }
 
+
+        public static Contract IsCnpjOrCPF(this Contract contract, string value, string property, string message)
+        {
+            var isCNPJ =  new Cnpj().Validate(value ?? string.Empty);
+            var isCPF = new Cpf().Validate(value ?? string.Empty);
+            if (string.IsNullOrEmpty(value) || (!isCNPJ && !isCPF))
+                contract.AddNotification(property, message);
+            return contract;
+        }
+
+
         public static Contract IsVoterDocument(this Contract contract, string value, string property, string message)
         {
             if (string.IsNullOrEmpty(value) || !new VoterDocument().Validate(value))
