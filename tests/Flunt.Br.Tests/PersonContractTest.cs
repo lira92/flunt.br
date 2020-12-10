@@ -20,6 +20,7 @@ namespace Flunt.Br.Tests
         [DataRow("777.777.777-77")]
         [DataRow("888.888.888-88")]
         [DataRow("999.999.999-99")]
+        [DataRow("999.999.abc-99")]
         [DataRow(null)]
         public void IsCpf_Invalid(string value)
         {

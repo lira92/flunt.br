@@ -22,6 +22,8 @@ namespace Flunt.Br.Validations
             int resto;
             value = value.Trim();
             value = value.Replace(".", "").Replace("-", "");
+            if(!long.TryParse(value, out var parsed))
+                return false;
             if (value.Length != 11 || cpfInvalid.Contains(value))
                 return false;
             tempCpf = value.Substring(0, 9);
