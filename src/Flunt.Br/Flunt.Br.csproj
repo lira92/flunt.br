@@ -2,14 +2,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.4.0</Version>
+    <Version>1.4.1</Version>
     <Authors>Alan Lira</Authors>
     <Description>Extensions of Flunt for Brazilian projects</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/lira92/flunt.br</PackageProjectUrl>
     <RepositoryUrl>https://github.com/lira92/flunt.br</RepositoryUrl>
-    <AssemblyVersion>1.4.0.0</AssemblyVersion>
-    <FileVersion>1.4.0.0</FileVersion>
+    <AssemblyVersion>1.4.1.0</AssemblyVersion>
+    <FileVersion>1.4.1.0</FileVersion>
     <PackageIcon>flunt-icon-br_compressed.png</PackageIcon>
     <PackageTags>Validation;Flunt.Br;Flunt;Cnpj;Cpf;Telefone;Cep</PackageTags>
   </PropertyGroup>
