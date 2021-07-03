@@ -1,6 +1,4 @@
-using Flunt.Br.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Flunt.Validations;
 
 namespace Flunt.Br.Tests
 {
@@ -17,7 +15,7 @@ namespace Flunt.Br.Tests
         {
             var wrong = new Contract()
                 .IsCreditCard(value, "document", "Invalid document");
-            Assert.IsFalse(wrong.Valid);
+            Assert.IsFalse(wrong.IsValid);
         }
 
         [TestMethod]
@@ -29,7 +27,7 @@ namespace Flunt.Br.Tests
         {
             var right = new Contract()
                 .IsCreditCard(value, "document", "Invalid document");
-            Assert.IsTrue(right.Valid);
+            Assert.IsTrue(right.IsValid);
         }
     }
 }

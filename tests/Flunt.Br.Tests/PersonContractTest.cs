@@ -26,7 +26,7 @@ namespace Flunt.Br.Tests
         {
             var wrong = new Contract()
                 .IsCpf(value, "document", "Invalid document");
-            Assert.AreEqual(false, wrong.Valid);
+            Assert.AreEqual(false, wrong.IsValid);
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace Flunt.Br.Tests
         {
             var right = new Contract()
                 .IsCpf(value, "document", "Invalid document");
-            Assert.AreEqual(true, right.Valid);
+            Assert.AreEqual(true, right.IsValid);
         }
         
         [TestMethod]
@@ -71,7 +71,7 @@ namespace Flunt.Br.Tests
         {
             var wrong = new Contract()
                 .IsCnpjOrCPF(value, "document", "Invalid document");
-            Assert.IsFalse(wrong.Valid);
+            Assert.IsFalse(wrong.IsValid);
         }
 
         [TestMethod]
@@ -83,7 +83,7 @@ namespace Flunt.Br.Tests
         {
             var right = new Contract()
                 .IsCnpjOrCPF(value, "document", "Invalid document");
-            Assert.IsTrue(right.Valid);
+            Assert.IsTrue(right.IsValid);
         }
 
 
@@ -107,7 +107,7 @@ namespace Flunt.Br.Tests
         {
             var wrong = new Contract()
                 .IsCnpj(value, "document", "Invalid document");
-            Assert.IsFalse(wrong.Valid);
+            Assert.IsFalse(wrong.IsValid);
         }
 
         [TestMethod]
@@ -117,7 +117,7 @@ namespace Flunt.Br.Tests
         {
             var right = new Contract()
                 .IsCnpj(value, "document", "Invalid document");
-            Assert.IsTrue(right.Valid);
+            Assert.IsTrue(right.IsValid);
         }
 
         [TestMethod]
@@ -129,7 +129,7 @@ namespace Flunt.Br.Tests
         {
             var wrong = new Contract()
                 .IsVoterDocument(value, "document", "Invalid document");
-            Assert.IsFalse(wrong.Valid);
+            Assert.IsFalse(wrong.IsValid);
         }
 
         [TestMethod]
@@ -140,7 +140,7 @@ namespace Flunt.Br.Tests
         {
             var right = new Contract()
                 .IsVoterDocument(value, "document", "Invalid document");
-            Assert.IsTrue(right.Valid);
+            Assert.IsTrue(right.IsValid);
         }
 
 
@@ -153,7 +153,7 @@ namespace Flunt.Br.Tests
         {
             var wrong = new Contract()
                 .IsCnh(value, "document", "Invalid document");
-            Assert.IsFalse(wrong.Valid);
+            Assert.IsFalse(wrong.IsValid);
         }
 
         [TestMethod]
@@ -164,7 +164,7 @@ namespace Flunt.Br.Tests
         {
             var right = new Contract()
                 .IsCnh(value, "document", "Invalid document");
-            Assert.IsTrue(right.Valid);
+            Assert.IsTrue(right.IsValid);
         }
     }
 }
