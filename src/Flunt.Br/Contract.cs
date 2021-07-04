@@ -6,8 +6,5 @@ namespace Flunt.Br
     /// This class extends the Contract<T> of Flunt Package
     /// To avoid breack changes
     /// </summary>
-    public class Contract: Contract<bool>
-    {
-        
-    }
+    public class Contract: Contract<bool> { }
 }
