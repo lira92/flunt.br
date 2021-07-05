@@ -19,7 +19,7 @@ namespace Flunt.Br.Tests
         public void IsCep_InValid(string cep)
         {
             var wrong = new Contract().IsCep(cep, "Cep", "Invalid Cep");
-            Assert.IsFalse(wrong.Valid);
+            Assert.IsFalse(wrong.IsValid);
         }
 
         [TestMethod]
@@ -28,7 +28,7 @@ namespace Flunt.Br.Tests
         public void IsCep_Valid(string cep)
         {
             var right = new Contract().IsCep(cep, "Cep", "Invalid Cep");
-            Assert.IsTrue(right.Valid);
+            Assert.IsTrue(right.IsValid);
         }
     }
 }

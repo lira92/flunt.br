@@ -1,6 +1,5 @@
 using Flunt.Br.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Flunt.Validations;
 
 namespace Flunt.Br.Tests
 {
@@ -21,7 +20,7 @@ namespace Flunt.Br.Tests
             var actual = contract.IsCarLicensePlate(value, CAR_LICENSE_PLATE_PROPERTY, INVALID_CAR_LICENSE_PLATE_ERROR);
 
             //Assert            
-            Assert.IsFalse(actual.Valid);
+            Assert.IsFalse(actual.IsValid);
         }
 
         [TestMethod]
@@ -41,7 +40,7 @@ namespace Flunt.Br.Tests
             var actual = contract.IsCarLicensePlate(value, CAR_LICENSE_PLATE_PROPERTY, INVALID_CAR_LICENSE_PLATE_ERROR);
 
             //Assert            
-            Assert.IsFalse(actual.Valid);
+            Assert.IsFalse(actual.IsValid);
         }
 
         [TestMethod]
@@ -56,7 +55,7 @@ namespace Flunt.Br.Tests
             var actual = contract.IsCarLicensePlate(value, CAR_LICENSE_PLATE_PROPERTY, INVALID_CAR_LICENSE_PLATE_ERROR);
 
             //Assert            
-            Assert.IsFalse(actual.Valid);
+            Assert.IsFalse(actual.IsValid);
         }
 
         [TestMethod]
@@ -80,7 +79,7 @@ namespace Flunt.Br.Tests
             var actual = contract.IsCarLicensePlate(value, CAR_LICENSE_PLATE_PROPERTY, INVALID_CAR_LICENSE_PLATE_ERROR);
 
             //Assert            
-            Assert.IsTrue(actual.Valid);
+            Assert.IsTrue(actual.IsValid);
         }
 
         [TestMethod]
@@ -104,7 +103,7 @@ namespace Flunt.Br.Tests
             var actual = contract.IsOldCarLicensePlate(value, CAR_LICENSE_PLATE_PROPERTY, INVALID_CAR_LICENSE_PLATE_ERROR);
 
             //Assert            
-            Assert.IsTrue(actual.Valid);
+            Assert.IsTrue(actual.IsValid);
         }
 
         [TestMethod]
@@ -130,7 +129,7 @@ namespace Flunt.Br.Tests
             var actual = contract.IsOldCarLicensePlate(value, CAR_LICENSE_PLATE_PROPERTY, INVALID_CAR_LICENSE_PLATE_ERROR);
 
             //Assert            
-            Assert.IsFalse(actual.Valid);
+            Assert.IsFalse(actual.IsValid);
         }
 
         [TestMethod]
@@ -154,7 +153,7 @@ namespace Flunt.Br.Tests
             var actual = contract.IsMercosulCarLicensePlate(value, CAR_LICENSE_PLATE_PROPERTY, INVALID_CAR_LICENSE_PLATE_ERROR);
 
             //Assert            
-            Assert.IsTrue(actual.Valid);
+            Assert.IsTrue(actual.IsValid);
         }
 
         [TestMethod]
@@ -174,7 +173,7 @@ namespace Flunt.Br.Tests
             var actual = contract.IsMercosulCarLicensePlate(value, CAR_LICENSE_PLATE_PROPERTY, INVALID_CAR_LICENSE_PLATE_ERROR);
 
             //Assert            
-            Assert.IsFalse(actual.Valid);
+            Assert.IsFalse(actual.IsValid);
         }
     }
 }

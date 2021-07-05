@@ -55,7 +55,7 @@ namespace Flunt.Br.Tests
         {
             var wrong = new Contract()
                 .IsPhone(value, "phone", "Invalid phone");
-            Assert.IsFalse(wrong.Valid);
+            Assert.IsFalse(wrong.IsValid);
         }
 
         [TestMethod]
@@ -118,11 +118,11 @@ namespace Flunt.Br.Tests
         [DataRow("+55 999999-9999")]
         [DataRow("+55 9999999999")]
         [DataRow("+55 99 9999 9999")]
-        public void IsPhone_Valid(string value)
+        public void IsPhone_IsValid(string value)
         {
             var right = new Contract()
                 .IsPhone(value, "phone", "Invalid phone");
-            Assert.IsTrue(right.Valid);
+            Assert.IsTrue(right.IsValid);
         }
 
         [TestMethod]
@@ -168,11 +168,11 @@ namespace Flunt.Br.Tests
         [DataRow("+55 99999999999", "+55 99999999999")]
         [DataRow("+55 99 9999 9999", "+55 99 9999 9999")]
         [DataRow("+55 99 99999 9999", "+55 99 99999 9999")]
-        public void IsPhoneFormat_Valid(string value, string formatNumber)
+        public void IsPhoneFormat_IsValid(string value, string formatNumber)
         {
             var right = new Contract()
                 .IsPhone(value, formatNumber, "phone", "Invalid phone");
-            Assert.IsTrue(right.Valid);
+            Assert.IsTrue(right.IsValid);
         }
 
         [TestMethod]
@@ -221,7 +221,7 @@ namespace Flunt.Br.Tests
         {
             var wrong = new Contract()
                 .IsPhone(value, formatNumber, "phone", "Invalid phone");
-            Assert.IsFalse(wrong.Valid);
+            Assert.IsFalse(wrong.IsValid);
         }
 
         [TestMethod]
@@ -232,7 +232,7 @@ namespace Flunt.Br.Tests
         public void IsCellPhone_Invalid(string value)
         {
             var wrong = new Contract().IsCellPhone(value, "cellphone", "Invalid cellphone");
-            Assert.IsFalse(wrong.Valid);
+            Assert.IsFalse(wrong.IsValid);
         }
 
         [TestMethod]
@@ -242,10 +242,10 @@ namespace Flunt.Br.Tests
         [DataRow("+55 (99) 9999-9999")]
         [DataRow("+55 (99) 9999-9999")]
         
-        public void IsCellPhone_Valid(string value)
+        public void IsCellPhone_IsValid(string value)
         {
             var right = new Contract().IsCellPhone(value, "cellphone", "Invalid cellphone");
-            Assert.IsTrue(right.Valid);
+            Assert.IsTrue(right.IsValid);
         }
 
         [TestMethod]
@@ -259,7 +259,7 @@ namespace Flunt.Br.Tests
         public void IsNewCellPhone_Invalid(string value)
         {
             var wrong = new Contract().IsNewFormatCellPhone(value, "cellphone", "Invalid cellphone");
-            Assert.IsFalse(wrong.Valid);
+            Assert.IsFalse(wrong.IsValid);
         }
 
         [TestMethod]
@@ -269,10 +269,10 @@ namespace Flunt.Br.Tests
         [DataRow("+55 (99) 9-9999-9999")]
         [DataRow("+55 (99) 9 9999-9999")]
 
-        public void IsNewCellPhone_Valid(string value)
+        public void IsNewCellPhone_IsValid(string value)
         {
             var right = new Contract().IsNewFormatCellPhone(value, "cellphone", "Invalid cellphone");
-            Assert.IsTrue(right.Valid);
+            Assert.IsTrue(right.IsValid);
         }
 
     }
