@@ -1,6 +1,5 @@
-using Flunt.Br.Extensions;
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Flunt.Validations;
 
 namespace Flunt.Br.Tests
 {
@@ -12,13 +11,21 @@ namespace Flunt.Br.Tests
         [DataRow("521586453135936245")]
         [DataRow("601138410090657947")]
         [DataRow("3559716521958")]
-        [DataRow(null)]
         public void IsCreditCard_Invalid(string value)
         {
             var wrong = new Contract()
                 .IsCreditCard(value, "document", "Invalid document");
-            Assert.IsFalse(wrong.Valid);
+            Assert.IsFalse(wrong.IsValid);
         }
+        
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void IsCreditCard_Exception()
+        {
+            var wrong = new Contract()
+                .IsCreditCard(null, "document", "Invalid document");
+            Assert.IsFalse(wrong.IsValid);
+        }        
 
         [TestMethod]
         [DataRow("4024007140542043")]
@@ -29,7 +36,7 @@ namespace Flunt.Br.Tests
         {
             var right = new Contract()
                 .IsCreditCard(value, "document", "Invalid document");
-            Assert.IsTrue(right.Valid);
+            Assert.IsTrue(right.IsValid);
         }
     }
 }

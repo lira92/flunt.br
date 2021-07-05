@@ -17,4 +17,5 @@ bld/
 !.vscode/launch.json
 !.vscode/extensions.json
 .vs/
+.idea/
 .history
