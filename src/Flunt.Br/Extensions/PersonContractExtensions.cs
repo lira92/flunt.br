@@ -23,9 +23,23 @@ namespace Flunt.Br.Extensions
             return contract;
         }
 
+        public static Contract IsCnpjAlphaNumeric(this Contract contract, string value, string property, string message)
+        {
+            if (string.IsNullOrEmpty(value) || !new CnpjAlphaNumeric().Validate(value))
+                contract.AddNotification(property, message);
+            return contract;
+        }
+
         public static Contract IsCnpjOrCPF(this Contract contract, string value, string property, string message)
         {
             if (string.IsNullOrEmpty(value) || (!new Cnpj().Validate(value) && !new Cpf().Validate(value)))
+                contract.AddNotification(property, message);
+            return contract;
+        }
+
+        public static Contract IsCnpjAlphaNumericOrCPF(this Contract contract, string value, string property, string message)
+        {
+            if (string.IsNullOrEmpty(value) || (!new CnpjAlphaNumeric().Validate(value) && !new Cpf().Validate(value)))
                 contract.AddNotification(property, message);
             return contract;
         }
