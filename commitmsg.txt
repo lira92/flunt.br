@@ -1,0 +1,19 @@
+fix: corrige validacao de caracteres repetidos em CNPJ alfanumerico
+
+CnpjAlphaNumeric comparava cada caractere de tempCnpj com value[0],
+mas tempCnpj passou por .ToUpper() enquanto value nao. Para um CNPJ
+em minusculas os dois nunca coincidem, a guarda de "todos os
+caracteres iguais" nunca dispara e a validacao segue adiante.
+
+O impacto e um falso positivo: "aaaaaaaaaaaa45" e
+"aa.aaa.aaa/aaaa-45" sao aceitos como validos, embora
+"AAAAAAAAAAAA45" (mesmo documento em maiusculas) seja corretamente
+rejeitado. Aceitar documento invalido e mais grave que o inverso.
+
+Passa a comparar com tempCnpj[0], mantendo os dois lados na mesma
+caixa. Cnpj.cs nao e afetado: rejeita qualquer caractere nao numerico
+antes dessa checagem.
+
+Adiciona 4 casos cobrindo minusculas, minusculas formatadas e
+maiusculas. Sem a correcao 2 deles falham; com ela a suite vai de
+403 para 407 testes, todos passando.
