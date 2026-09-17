@@ -88,6 +88,18 @@ namespace Flunt.Br.Tests
 
 
         [TestMethod]
+        [DataRow("aaaaaaaaaaaa45")]
+        [DataRow("aa.aaa.aaa/aaaa-45")]
+        [DataRow("AAAAAAAAAAAA45")]
+        [DataRow("bbbbbbbbbbbb90")]
+        public void IsCnpjAlphaNumeric_RepeatedCharacters_InValid(string value)
+        {
+            var wrong = new Contract()
+                .IsCnpjAlphaNumeric(value, "document", "Invalid document");
+            Assert.IsFalse(wrong.IsValid);
+        }
+
+        [TestMethod]
         [DataRow("123456789101112")]
         [DataRow("655618111115522")]
         [DataRow("00000000000abc")]
