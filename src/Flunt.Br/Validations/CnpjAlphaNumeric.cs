@@ -20,7 +20,7 @@ namespace Flunt.Br.Validations
             if (!Regex.IsMatch(value, pattern))
                 return false;
             tempCnpj = value.Substring(0, 12).ToUpper();
-            // CNPJ com todos os caracteres iguais � inv�lido
+            // CNPJ com todos os caracteres iguais é inválido
             if (tempCnpj.All(caractere => caractere == tempCnpj[0]))
                 return false;
             soma = 0;
